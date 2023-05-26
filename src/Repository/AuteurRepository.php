@@ -2,26 +2,26 @@
 
 namespace App\Repository;
 
-use App\Entity\Autheur;
+use App\Entity\Auteur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Autheur>
+ * @extends ServiceEntityRepository<Auteur>
  *
- * @method Autheur|null find($id, $lockMode = null, $lockVersion = null)
- * @method Autheur|null findOneBy(array $criteria, array $orderBy = null)
- * @method Autheur[]    findAll()
- * @method Autheur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Auteur|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Auteur|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Auteur[]    findAll()
+ * @method Auteur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class AutheurRepository extends ServiceEntityRepository
+class AuteurRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Autheur::class);
+        parent::__construct($registry, Auteur::class);
     }
 
-    public function save(Autheur $entity, bool $flush = false): void
+    public function save(Auteur $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -30,7 +30,7 @@ class AutheurRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(Autheur $entity, bool $flush = false): void
+    public function remove(Auteur $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 
@@ -40,7 +40,7 @@ class AutheurRepository extends ServiceEntityRepository
     }
 
 //    /**
-//     * @return Autheur[] Returns an array of Autheur objects
+//     * @return Auteur[] Returns an array of Auteur objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -54,7 +54,7 @@ class AutheurRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Autheur
+//    public function findOneBySomeField($value): ?Auteur
 //    {
 //        return $this->createQueryBuilder('a')
 //            ->andWhere('a.exampleField = :val')
